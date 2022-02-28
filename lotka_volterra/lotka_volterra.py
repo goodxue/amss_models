@@ -103,12 +103,10 @@ class Lotka_Volterra(object):
         ax1.tick_params('y', colors=predcolor)
         ax2.set_ylabel(preylabel,fontsize=12, color=preycolor)
         ax2.tick_params('y', colors='blue', color=preycolor)
-        #ax1.plot(self.time, self.predator, label='Predator', color=predcolor, linestyle='dashed')
-        #ax2.plot(self.time, self.prey, label = 'Prey', color = preycolor)
+
         if(plot_capacity):
             ax2.axhline(self.prey_capacity, label= 'Prey carrying capacity', color=preycolor, linestyle='dotted')
-        #ax2.axhline(self.predator_capacity, label= 'Predator carrying capacity', color=predcolor, linestyle='dashed')
-        #plt.show()
+
         for i in range(self.tmax):
             ax1.plot(self.time[:int(i*self.n/self.tmax)], self.predator[:int(i*self.n/self.tmax)], label='Predator', color=predcolor, linestyle='dashed')
             ax2.plot(self.time[:int(i*self.n/self.tmax)], self.prey[:int(i*self.n/self.tmax)], label = 'Prey', color = preycolor)
